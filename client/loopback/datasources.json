@@ -1,0 +1,10 @@
+{
+    "local": {
+        "connector": "memory",
+        "localStorage": "loopback-polymer-starter-kit"
+    },
+    "remote": {
+        "connector": "remote",
+        "url": "http://localhost:3000/api"
+    }
+}
