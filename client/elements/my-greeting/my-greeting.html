@@ -8,27 +8,32 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<dom-module id="my-greeting">
-  <style>
-    :host {
-      display: block;
-    }
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
 
-    @media (max-width: 600px) {
-      h1.paper-font-display1 {
-        font-size: 24px;
-      }
-    }
-  </style>
+<dom-module id="my-greeting">
   <template>
-    <h1 class="paper-font-display1"><span>{{greeting}}</span></h1>
-    <span class="paper-font-body2">Update text to change the greeting.</span>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      span,
+      input {
+        @apply(--paper-font-body2);
+      }
+    </style>
+
+    <h1 class="page-title" tabindex="-1">{{greeting}}</h1>
+    <label for="greeting-input">Update text to change the greeting.</label>
     <!-- Listens for "input" event and sets greeting to <input>.value -->
-    <input class="paper-font-body2" value="{{greeting::input}}">
+    <input id="greeting-input" value="{{greeting::input}}">
   </template>
 
   <script>
     (function() {
+      'use strict';
+
       Polymer({
         is: 'my-greeting',
 
@@ -42,5 +47,4 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       });
     })();
   </script>
-
 </dom-module>
