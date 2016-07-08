@@ -16,7 +16,7 @@ require('es6-promise').polyfill();
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
-var runSequence = require('run-sequence');
+var runSequence = require('run-sequence').use(gulp);
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var merge = require('merge-stream');
@@ -307,5 +307,6 @@ require('web-component-tester').gulp.init(gulp);
 try {
   require('require-dir')('tasks');
 } catch (err) {
+  console.error(err);
   // Do nothing
 }
