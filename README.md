@@ -242,8 +242,12 @@ The instructions assume the name of the new model is 'MyModel'.
     }
     ```
 
- 6. Create the Polymer Element representing the client Model
- TODO: Doc: Create the Polymer Element representing the client Model
+ 6. Use lbclient anywhere:
+
+    ```js
+    var lb = require('lbclient');
+    lb.models.MyModel.method();
+    ```
 
 ## Service Worker
 
