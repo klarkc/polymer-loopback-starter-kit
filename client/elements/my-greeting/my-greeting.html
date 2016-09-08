@@ -43,6 +43,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             value: 'Welcome!',
             notify: true
           }
+        },
+
+        ready: function() {
+          console.log(app.lb.models.LocalTodo);
         }
       });
     })();
