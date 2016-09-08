@@ -214,7 +214,7 @@ gulp.task('clean', function() {
 });
 
 // Watch files for changes & reload
-gulp.task('serve:client', ['styles'], function() {
+gulp.task('serve:client', ['lbclient', 'styles'], function() {
   browserSync({
     port: 5000,
     notify: false,
